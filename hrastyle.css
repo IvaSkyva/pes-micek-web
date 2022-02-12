@@ -1,0 +1,52 @@
+:root {
+	--pozadi: lightskyblue;
+	--score: red;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	
+	background-color: cadetblue;
+}
+
+
+
+#score {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	font-family: 'Press Start 2P', sans-serif;
+	font-size: 36px;
+	z-index: 999;
+	color: var(--score);
+}
+
+#panacek,
+#mince {
+	position: absolute;
+}
+
+#panacek {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+.start {
+	position: absolute;
+}
+button {position: absolute;
+	top: 360px;
+}
