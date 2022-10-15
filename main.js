@@ -12,12 +12,16 @@ let pocetMinci;
 	// a umístíme panáčka do středu okna
 let	panacekX = Math.round(window.innerWidth / 2 - panacekSirka / 2);
 let	panacekY = Math.round(window.innerHeight / 2 - panacekVyska / 2);
-
+const btn = document.getElementById('tlacitko');
 
 pocetMinci = 0;
 	
 
+btn.addEventListener('click', () => {
+    // 👇️ hide button
+    btn.style.display = 'none';
 
+  });
 
 document.onkeydown = detectKey;
 
@@ -102,7 +106,7 @@ setInterval(() => {
    mince.style.left= getRandom(0, w -50) +'px'; //  Horizontally
    mince.style.top = getRandom(0, h - 50) +'px'; //  Vertically
     
-  }, 2000); // every 2 seconds
+  }, 4000); // every 4 seconds
 
  
 
