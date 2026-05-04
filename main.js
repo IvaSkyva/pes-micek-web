@@ -13,6 +13,7 @@ let panacekVyska = panacek.height;
  	
 }
 
+  });
 
 document.onkeydown = detectKey;
 
