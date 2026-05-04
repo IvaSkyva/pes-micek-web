@@ -1,8 +1,3 @@
-:root {
-	--pozadi: lightskyblue;
-	--score: red;
-}
-
 html {
 	box-sizing: border-box;
 }
@@ -16,25 +11,15 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	
 	background-color: cadetblue;
 }
 
 
 
-#score {
+#micek {
 	position: absolute;
-	top: 50px;
-	left: 50px;
-	font-family: 'Press Start 2P', sans-serif;
-	font-size: 36px;
-	z-index: 999;
-	color: var(--score);
-}
-
-#panacek,
-#mince {
-	position: absolute;
+	top: 50%;
+	left: 50%;
 }
 
 #panacek {
@@ -44,9 +29,26 @@ body {
 	z-index: 1;
 }
 
-.start {
-	position: absolute;
+#myModal {
+	display: block;
+	
 }
-button {position: absolute;
-	top: 360px;
-}
+/* Modal Content */
+.modal-content {
+	text-align: center;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 20%;
+	
+  }
+  
+  /* The Close Button */
+  #close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  

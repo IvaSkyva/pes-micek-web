@@ -5,21 +5,30 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dog playing</title>
-	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	
 	<link rel="stylesheet" type="text/css" href="hrastyle.css">
 </head>
 
-<body>
+<body onload="priNacteniStranky()">
+
+	<div id="myModal">			
+		<!-- Modal content -->
+<div class="modal-content">
+<div id="close">&times;</div>
+<p>Chytání míčku</p>
+<p>Pro pohyb psa použijte šipky na klávesnici</p>
+</div>
+	  </div>
+	
+		
+			<img  id="panacek"  src="obrazky/dogright.png" alt="Panáček">
+			<img id="micek" src="obrazky/redball.png" alt="Micek">
+			<audio id="zvukpsa" src="zvuky/dogbark.mp3"></audio>
 	
 
-	
 
-			<img  id="panacek"  src="obrazky/dogup2.png" alt="Panáček">
-			<img id="mince" src="obrazky/redball.png" alt="Mince">
-			<audio id="zvukmince" src="zvuky/mince.mp3"></audio>
-			
 			
 
-	<script src="main.js"></script>
+	<script src="refactoring.js"></script>
 </body>
 </html>

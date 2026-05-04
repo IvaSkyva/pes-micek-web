@@ -1,22 +1,17 @@
-let w = window.innerWidth;
-let h = window.innerHeight;
+function priNacteniStranky() {
+ w = window.innerWidth;
+ h = window.innerHeight;
 let tlacitko = document.querySelector('.start');
 let panacek = document.getElementById('panacek');
-let mince= document.querySelector('#mince');
+let micek= document.querySelector('#micek');
 let panacekSirka = panacek.width;
 let panacekVyska = panacek.height;
-let minceSirka = mince.width;
-let minceVyska = mince.height;
-let score = document.querySelector('#score');
-let pocetMinci;
-	// a umístíme panáčka do středu okna
-let	panacekX = Math.round(window.innerWidth / 2 - panacekSirka / 2);
-let	panacekY = Math.round(window.innerHeight / 2 - panacekVyska / 2);
+ micekSirka = micek.width;
+ micekVyska = micek.height;
 
-
-pocetMinci = 0;
-	
-
+ modal = document.getElementById('myModal');
+ 	
+}
 
 
 document.onkeydown = detectKey;
@@ -31,11 +26,11 @@ function detectKey(e) {
         // up arrow
         if (posTop > 0 && posTop < h - 80  && posLeft < w - 80 / 4 ) {
             panacek.style.top  = (posTop-10)+"px";
-            panacek.src = "obrazky/dogup2.png";
+            panacek.src = "obrazky/dogupright.png";
         }
         else if (posTop > 0) {
             panacek.style.top  = (posTop-10)+"px";
-            panacek.src = "obrazky/dogup.png";
+            panacek.src = "obrazky/dogupleft.png";
         }
     }
     else if (e.keyCode == '40') {
@@ -64,7 +59,6 @@ function detectKey(e) {
         }  
     }
  
-    
 
     detekujKolizi();
 }
@@ -72,39 +66,50 @@ function detectKey(e) {
 
 
 function detekujKolizi() {
+    
+    let panacekSirka = panacek.width;
+    let panacekVyska = panacek.height;
     let panacekX = panacek.offsetLeft;
     let panacekY = panacek.offsetTop;
-    let minceX = mince.offsetLeft;
-    let minceY = mince.offsetTop;
+    let micekX = micek.offsetLeft;
+    let micekY = micek.offsetTop;
 
-    if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY))  {
-        // panacek a mince se prekryvaji
-       
-        cink();
-
+    if (!( panacekX + panacekSirka < micekX || micekX + micekSirka < panacekX || panacekY + panacekVyska < micekY || micekY + micekVyska < panacekY))  {
+        // panacek a micek se prekryvaji
         
+        stekot();
+        zastavSmycku();
            
     }
 }
- 
 
-
-// přidáme zvuk cinknutí
-function cink() {    
-    let audio = document.querySelector('#zvukmince');
+// přidáme zvuk 
+function stekot() {    
+    let audio = document.querySelector('#zvukpsa');
     audio.play();
 }
 
+// When the user clicks on <span> (x), close the modal
+function krizek() {
+    modal.style.display = "none"
+}
+span = document.querySelector('#close');
+span.onclick = krizek;
+  
+
 let getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 
-setInterval(() => {
-
-   mince.style.left= getRandom(0, w -50) +'px'; //  Horizontally
-   mince.style.top = getRandom(0, h - 50) +'px'; //  Vertically
+intervalId = setInterval(() => {
+   micek.style.left= getRandom(0, w -50) +'px'; //  Horizontally
+   micek.style.top = getRandom(0, h - 50) +'px'; //  Vertically
     
-  }, 2000); // every 2 seconds
+  }, 4000); // every 4 seconds
 
- 
+// Funkce pro zastavení intervalu
+function zastavSmycku() {
+    clearInterval(intervalId);
+    console.log("Smyčka byla zastavena");
+}
 
 
 
